@@ -1,0 +1,158 @@
+.gas-list {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.gas-card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gas-content {
+    padding: 20px;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    z-index: 2;
+    position: relative;
+}
+
+.gas-card .gas-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.gas-card .gas-details p {
+    margin-bottom: 5px;
+    color: #6c757d;
+}
+
+.gas-card .gas-details strong {
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* --- Swipe Action Indicators --- */
+.swipe-action {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+.swipe-action.edit {
+    background-color: #28a745;
+    right: 0;
+}
+
+.swipe-action.delete {
+    background-color: #dc3545;
+    left: 0;
+}
+
+.gas-card.show-edit .swipe-action.edit,
+.gas-card.show-delete .swipe-action.delete {
+    opacity: 1;
+}
+
+/* --- Attractive Detail Modal Styles --- */
+#gas-details-modal .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#gas-details-modal .modal-title {
+    color: #343a40;
+    font-weight: 600;
+}
+
+#gas-details-modal .modal-body {
+    font-family: 'Poppins', sans-serif;
+    padding: 1.5rem;
+}
+
+#gas-details-modal h6 {
+    font-weight: 700;
+    color: #006A4E;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.6rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.95rem;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.detail-value {
+    color: #6c757d;
+    text-align: right;
+    word-break: break-all;
+}
+
+/* --- Add/Edit Modal UI Improvements --- */
+#gas-modal .form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+#gas-modal .form-control,
+#gas-modal .select2-container .select2-selection--single {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    height: calc(1.5em + 0.75rem + 2px); /* Match bootstrap's default input height */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#gas-modal .form-control:focus,
+#gas-modal .select2-container--open .select2-selection--single {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* --- Mobile UI Improvements --- */
+@media (max-width: 768px) {
+    .card-header h5 {
+        margin-bottom: 15px !important;
+    }
+
+    .card-header .btn {
+        width: 100%;
+    }
+}

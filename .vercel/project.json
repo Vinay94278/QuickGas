@@ -1,0 +1,7 @@
+{
+  "framework": null,
+  "useNodeJsResponseStreaming": false,
+  "installCommand": "pip install --user -r requirements.txt",
+  "buildCommand": "python main.py",
+  "outputDirectory": "frontend"
+}

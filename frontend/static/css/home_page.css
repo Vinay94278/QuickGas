@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary: #ef7f1b;
+    --secondary: #1c4482;
+    --background: #0a192f;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--background);
+    color: var(--text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#particles-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-light);
+    animation: float linear infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.8) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-100px) scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.brand h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+}
+
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.hero {
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.hero > p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+}
+
+.gas-types {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gas-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 3px solid;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gas-badge:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.o2 {
+    background: rgba(28, 68, 130, 0.2);
+    border-color: #1c4482;
+    color: #1c4482;
+    box-shadow: 0 0 20px rgba(28, 68, 130, 0.3);
+}
+
+.h2 {
+    background: rgba(239, 127, 27, 0.2);
+    border-color: #ef7f1b;
+    color: #ef7f1b;
+    box-shadow: 0 0 20px rgba(239, 127, 27, 0.3);
+}
+
+.n2 {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: #666;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.da {
+    background: rgba(102, 102, 102, 0.2);
+    border-color: #999;
+    color: #ccc;
+    box-shadow: 0 0 20px rgba(102, 102, 102, 0.3);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(239, 127, 27, 0.2);
+}
+
+.feature .icon {
+    font-size: 2rem;
+}
+
+.feature span:last-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--primary), #ff9a3c);
+    color: var(--text-light);
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(239, 127, 27, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(239, 127, 27, 0.6);
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+    header { padding: 1.5rem; }
+    
+    .logo { width: 50px; height: 50px; }
+    
+    .brand h1 { font-size: 1.5rem; }
+    
+    .tagline { font-size: 0.7rem; }
+    
+    main { padding: 1rem; }
+    
+    .hero h2 { font-size: 2rem; }
+    
+    .hero > p { font-size: 1rem; margin-bottom: 2rem; }
+    
+    .gas-types { gap: 1rem; margin-bottom: 2rem; }
+    
+    .gas-badge { width: 60px; height: 60px; font-size: 1.2rem; }
+    
+    .features { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    
+    .feature { padding: 1rem 0.5rem; }
+    
+    .feature .icon { font-size: 1.5rem; }
+    
+    .feature span:last-child { font-size: 0.8rem; }
+    
+    .cta-button { padding: 1rem 2rem; font-size: 0.95rem; width: 100%; }
+    
+    .particle { font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    .hero h2 { font-size: 1.6rem; }
+    
+    .gas-types { flex-wrap: wrap; }
+    
+    .gas-badge { width: 55px; height: 55px; font-size: 1rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h2 { font-size: 2.8rem; }
+    
+    .features { grid-template-columns: repeat(2, 1fr); }
+}
