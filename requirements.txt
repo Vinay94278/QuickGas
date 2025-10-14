@@ -8,8 +8,8 @@ python-dotenv
 passlib
 PyJWT
 typing_extensions
-pydantic[email]
+pydantic
 bcrypt==3.2.0
 tzdata
 pytz
-psycopg2
+psycopg2-binary==2.9.9
