@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const particlesContainer = document.getElementById('particles-container');
 
     loginBtn?.addEventListener('click', () => {
-        window.location.href = '/frontend/index.html';
+        window.location.href = '/frontend/login.html';
     });
 
     const gases = [
